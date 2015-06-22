@@ -1,16 +1,19 @@
-#Collection of configs and tweaks.
+Dotfiles
+======================================
+
+Collection of configs and tweaks.
 
 
-.vim and vim
+**.vim and vim**
 
-    Vim configuration 
+- Vim configuration files
 
 
-.tmux
+**.tmux**
 
-    Tmux configuration
+- Tmux configuration
 
-aliases.sh
+** aliases.sh **
 
-    Some scripts for adding aliases to my new opensuse
+- Script that adds some specific aliases to my new openSUSE machine
 
