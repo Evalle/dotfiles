@@ -13,7 +13,7 @@ Collection of configs and tweaks.
 
 - Tmux configuration
 
-**aliases.sh **
+**aliases.sh**
 
 - Script that adds some specific aliases to my new openSUSE machine
 
