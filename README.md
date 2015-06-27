@@ -11,7 +11,11 @@ Collection of configs and tweaks.
 
 **.tmux**
 
-- Tmux configuration
+- Tmux configuration file
+
+**.gitconfig**
+
+- Git configuration file
 
 **aliases.sh**
 
