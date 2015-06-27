@@ -1,0 +1,10 @@
+[user]
+	email = shmarnev@gmail.com
+	name = evalle
+[core]
+	autocrlf = input
+[pull]
+	rebase = true
+[alias]
+	s = status -s
+	lg = log --oneline --decorate --all --graph
