@@ -21,3 +21,6 @@ Collection of config files and tweaks.
 
 - Script that adds some specific aliases to my new openSUSE machine
 
+**i3**
+
+- directory with config files for i3 tiling wm, just copy them to ~/.config/
