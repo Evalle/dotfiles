@@ -1,7 +1,7 @@
 Dotfiles
 ======================================
 
-Collection of configs and tweaks.
+Collection of config files and tweaks.
 
 
 **.vim and vim**
