@@ -22,16 +22,26 @@
 # For some (older) Palm Pilots, you might need to set a lower baud rate
 # e.g. 57600 or 38400; lowest is 9600 (very slow!)
 #
+
 #export PILOTPORT=/dev/pilot
 #export PILOTRATE=115200
 
 test -s ~/.alias && . ~/.alias || true
 
+#dircolors
+if [ -f ~/.dir_colors ]; then
+    eval `dircolors ~/.dir_colors`
+fi
 # Some aliases here
-
 alias ibs='osc --apiurl https://api.suse.de'
+alias ebs='osc -A https://api.opensuse.org'
+#alias ebsb='osc -A https://api.opensuse.org ebs build --ccache --cpio-bulk-download --download-api-only'
 alias tmux='tmux -2'
 alias shellcheck='/home/evgeny/.cabal/bin/shellcheck'
+alias cucumber='bundle exec cucumber'
+alias ls='ls --color=auto'
+alias ..='cd ..'
+alias l='ls -l'
 
 # use github-create function to creare github repository from command line
 github-create() {
@@ -89,7 +99,14 @@ docker-ip() {
               
 
 # Github's hub aliaases:
-eval "$(hub alias -s)"
+#eval "$(hub alias -s)"
+
+# export /home/evgeny/bin directory
+export PATH=$PATH:$HOME/bin
+export EDITOR=vim
+
+# export locale
+export LANG=en_US.utf8
 
 # ibs / obs setiings
 export COMP_WORDBREAKS=${COMP_WORDBREAKS/:/}
@@ -99,9 +116,12 @@ alias oscsd="osc service localrun download_files"
 
 #PS1='[\u@\h \W]\$ '  # Default
 #PS1='\[\e[1;36m\]\u@\h \W\$\[\e[0m\] '
+#PS1='\[\e[0;33m\]\u\[\e[m\] \[\e[1;36m\]\w\[\e[m\] \[\e[0;35m\]\$\[\e[m\] '
+#PS1="\[\033[37;1m\][\[\033[33;1m\]\u\[\033[37;1m\]@\[\033[32;1m\]\h\[\033[37;1m\]:\[\033[0;36m\]\w\[\033[37;1m\]]\[\033[m\]$ "
+#PS1="\[\033[37;1m\][\[\033[m\]\u\[\033[37;1m\]@\[\033[m\]\h\[\033[37;1m\]:\[\033[m\]\w\[\033[37;1m\]]\[\033[m\]$ "
 PS1='\[\e[0;33m\]\u\[\e[m\] \[\e[1;36m\]\w\[\e[m\] \[\e[0;35m\]\$\[\e[m\] '
 
-# Monokai promt
+# Monokai prompt
 # Variables for prompt clarity
 
 #LBLUE=$'\e[36;40m'
@@ -111,4 +131,5 @@ PS1='\[\e[0;33m\]\u\[\e[m\] \[\e[1;36m\]\w\[\e[m\] \[\e[0;35m\]\$\[\e[m\] '
 #YELLOW=$'\e[37;40m'
 #PINK=$'\e[31;40m'
 
-#PS1='\n\n\[$PINK\]\u \[$LBLUE\]on \[$PURPLE\]\d \[$LBLUE\]at \[$ORANGE\]\@ \[$LBLUE\]in \[$GREEN\]\w \[$ORANGE\]`_git_prompt` \n\[$GREEN\]>> \[$YELLOW\]'
+#PS1='\n\n\[$PINK\]\u \[$LBLUE\]on \[$PURPLE\]\d \[$LBLUE\]at \[$ORANGE\]\@ \[$LBLUE\]in'
+#. ~/.bash_prompt
