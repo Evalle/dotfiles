@@ -24,3 +24,10 @@ Collection of config files and tweaks.
 **i3**
 
 - directory with config files for i3 tiling wm, just copy them to ~/.config/
+
+**Monokai.colorcheme**
+
+- one should put this file into:
+  - KDE 4: ~/.kde/share/apps/konsole
+  - KDE 5: ~/.local/share/konsole
+
