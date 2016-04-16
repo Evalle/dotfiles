@@ -31,3 +31,10 @@ Collection of config files and tweaks.
   - KDE 4: ~/.kde/share/apps/konsole
   - KDE 5: ~/.local/share/konsole
 
+**.dir_colors**
+
+- one should copy .dir_colors into home directory
+
+*** TODO ***
+
+- create bash script to do all above stuff automatically
