@@ -1,5 +1,7 @@
 syntax on
 
+scriptencoding utf-8
+set encoding=utf-8
 set tabstop=4
 set shiftwidth=4
 set smarttab
@@ -99,7 +101,7 @@ if ! has("gui_running")
 endif
 " feel free to choose :set background=light for a different style
 set background=dark
-colors peaksea 
+colors monokai
 
 "try
 "    colorscheme desert
@@ -116,9 +118,6 @@ colors peaksea
 "    set guitablabel=%M\ %t
 "endif
 
-" Set utf8 as standard encoding and en_US as the standard language
-set encoding=utf8
-
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
@@ -130,3 +129,7 @@ set nobackup
 set nowb
 set noswapfile
 
+" pathogen
+execute pathogen#infect()
+filetype plugin indent on
+let g:jedi#auto_initialization = 0
