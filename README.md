@@ -35,6 +35,6 @@ Collection of config files and tweaks.
 
 - color output for 'ls' command
 
-** install.sh **
+**install.sh**
 
 - bash script to install all above stuff automatically
