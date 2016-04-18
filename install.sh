@@ -10,3 +10,4 @@ cp Monokai.colorscheme $HOME/.local/share/konsole/
 cp .tmux.conf $HOME/
 cp -r .vim $HOME/
 cp .vimrc $HOME/
+exec aliases.sh
