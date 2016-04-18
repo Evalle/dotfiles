@@ -28,9 +28,9 @@ Collection of config files and tweaks.
 **Monokai.colorcheme**
 
 - one should put this file into:
-  KDE 4: ~/.kde/share/apps/konsole
-  KDE 5: ~/.local/share/konsole
-  You can then select it in the appearance tab of your profile settings.
+  - KDE 4: ~/.kde/share/apps/konsole
+  - KDE 5: ~/.local/share/konsole
+  - You can then select it in the appearance tab of your profile settings.
   ![](https://github.com/Evalle/dotfiles/blob/master/tmp/konsole_anim.gif)
 **.dir_colors**
 
