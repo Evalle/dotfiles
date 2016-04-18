@@ -3,11 +3,9 @@ Dotfiles
 
 Collection of config files and tweaks.
 
-
 **.vim and vim**
 
 - Vim configuration files
-
 
 **.tmux**
 
@@ -35,8 +33,8 @@ Collection of config files and tweaks.
 
 **.dir_colors**
 
-- one should copy .dir_colors into home directory
+- color output for 'ls' command
 
-*** TODO ***
+** install.sh **
 
-- create bash script to do all above stuff automatically
+- bash script to install all above stuff automatically
