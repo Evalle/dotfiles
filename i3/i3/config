@@ -159,7 +159,11 @@ bar {
         position bottom
 }
 
-set $Locker i3lock && sleep 1
+# custom lock
+#bindsym l  exec sh ~/.i3/i3lock.sh
+
+#set $Locker i3lock && sleep 1
+set $Locker exec sh ~/.config/i3/i3lock.sh
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
