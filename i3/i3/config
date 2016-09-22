@@ -13,6 +13,9 @@ font pango:Source Code Pro, FontAwesome 9
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
 
+# touchpad tapping
+exec --no-startup-id synclient VertEdgeScroll=1 TapButton1=1 TapButton2=1 TapButton3=1 MaxTapTime=40
+
 # wallpaper
 exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
 
@@ -159,12 +162,14 @@ bar {
         position bottom
          colors {
                 statusline #606060
-				background #242424
-				focused_workspace #242424 #D5D5D5 #242424 
-				inactive_workspace #242424 #282828 #CCCACA
-				urgent_workspace   #1A1A1A #664742 #1b1b1b              
+                background #242424
+                focused_workspace #242424 #D5D5D5 #242424 
+                inactive_workspace #242424 #282828 #EAEFEC
+                urgent_workspace   #1A1A1A #664742 #1b1b1b              
         }
 }
+
+# EAEFEC -> CCCACA
 
 # custom lock
 #bindsym l  exec sh ~/.i3/i3lock.sh
