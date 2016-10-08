@@ -133,3 +133,6 @@ set noswapfile
 execute pathogen#infect()
 filetype plugin indent on
 let g:jedi#auto_initialization = 0
+
+" column settings
+set colorcolumn=78,85
