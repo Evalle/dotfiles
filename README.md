@@ -3,15 +3,14 @@ Dotfiles
 
 Collection of config files and tweaks.
 
-**.vim and vim**
-
-- Vim configuration files
-    plugins:
-        - airline
-        - fugitive
-        - smooth-scroll.vim
-        - vim-go
-        - jedi-vim
+**.vim and vimrc**
+(Vim configuration files)
+- Vim plugins:
+    - airline
+    - fugitive
+    - smooth-scroll.vim
+    - vim-go
+    - jedi-vim
 
 **.tmux**
 
