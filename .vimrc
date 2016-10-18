@@ -1,3 +1,4 @@
+execute pathogen#infect()
 syntax on
 
 scriptencoding utf-8
@@ -30,9 +31,10 @@ set showcmd
 set incsearch
 
 " Ignore case when searching
-
 set ignorecase
 
+" Highlight current line number
+"set cursorline
 
 set wrap
 
@@ -136,3 +138,10 @@ let g:jedi#auto_initialization = 0
 
 " column settings
 set colorcolumn=78,85
+
+" smooth scrolling 
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 40, 4)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 40, 4)<CR>
+
+" vim airline, show special symbols
+let g:airline_powerline_fonts = 1
