@@ -145,3 +145,10 @@ noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 40, 4)<CR>
 
 " vim airline, show special symbols
 let g:airline_powerline_fonts = 1
+let g:airline_theme='luna'
+
+" plugins
+filetype plugin on
+
+" tagbar
+nmap <F8> :TagbarToggle<CR>

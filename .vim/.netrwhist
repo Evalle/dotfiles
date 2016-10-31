@@ -1,6 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/home/evgeny/.vim/colors'
-let g:netrw_dirhist_2='/home/evgeny/.vim'
-let g:netrw_dirhist_3='/home/evgeny'
-let g:netrw_dirhist_4='/home'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/evgeny/Projects/evalle.github.io'
+let g:netrw_dirhist_2='/home/evgeny/Projects/evalle.github.io/.git'
+let g:netrw_dirhist_3='/home/evgeny/Projects/evalle.github.io/_posts'
