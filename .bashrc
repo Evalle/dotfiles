@@ -114,12 +114,19 @@ alias isc="osc -A ibs"
 alias oscb="osc build --ccache --cpio-bulk-download --download-api-only"
 alias oscsd="osc service localrun download_files"
 
+# git branch
+parse_git_branch() {
+         git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
 #PS1='[\u@\h \W]\$ '  # Default
 #PS1='\[\e[1;36m\]\u@\h \W\$\[\e[0m\] '
 #PS1='\[\e[0;33m\]\u\[\e[m\] \[\e[1;36m\]\w\[\e[m\] \[\e[0;35m\]\$\[\e[m\] '
 #PS1="\[\033[37;1m\][\[\033[33;1m\]\u\[\033[37;1m\]@\[\033[32;1m\]\h\[\033[37;1m\]:\[\033[0;36m\]\w\[\033[37;1m\]]\[\033[m\]$ "
 #PS1="\[\033[37;1m\][\[\033[m\]\u\[\033[37;1m\]@\[\033[m\]\h\[\033[37;1m\]:\[\033[m\]\w\[\033[37;1m\]]\[\033[m\]$ "
-PS1='\[\e[0;33m\]\u\[\e[m\] \[\e[1;36m\]\w\[\e[m\] \[\e[0;35m\]\$\[\e[m\] '
+#PS1="\[\e[0;33m\]\u\[\e[m\] \[\e[1;36m\]\w\[\e[m\] \[\e[0;35m\]\$\[\e[m\]\$(parse_git_branch)\[\033[00m\] "
+PS1="\[\e[0;33m\]\u@\h \e[1;36m\W\[\]\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
+
 
 # Monokai prompt
 # Variables for prompt clarity
@@ -145,3 +152,16 @@ man() {
     LESS_TERMCAP_us=$'\E[04;38;5;146m' \
     man "$@"
 }
+
+#the fuck alias
+
+# specific for arch
+export GEM_HOME=$(ruby -e 'print Gem.user_dir')
+PATH=$PATH:/home/evgeny/.gem/ruby/2.3.0/bin/
+export PATH
+
+# added by travis gem
+[ -f /home/evgeny/.travis/travis.sh ] && source /home/evgeny/.travis/travis.sh
+
+# man pages highlight
+export PAGER=most
