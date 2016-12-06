@@ -115,9 +115,36 @@ alias oscb="osc build --ccache --cpio-bulk-download --download-api-only"
 alias oscsd="osc service localrun download_files"
 
 # git branch
-parse_git_branch() {
-         git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+#parse_git_branch() {
+#         git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+#}
+
+function _git_prompt() {
+    local git_status="`git status -unormal 2>&1`"
+    if ! [[ "$git_status" =~ Not\ a\ git\ repo ]]; then
+        if [[ "$git_status" =~ nothing\ to\ commit ]]; then
+            local ansi=42
+        elif [[ "$git_status" =~ nothing\ added\ to\ commit\ but\ untracked\ files\ present ]]; then
+            local ansi=43
+        else
+            local ansi=45
+        fi
+        if [[ "$git_status" =~ On\ branch\ ([^[:space:]]+) ]]; then
+            branch=${BASH_REMATCH[1]}
+            test "$branch" != master || branch=' '
+        else
+            # Detached HEAD.  (branch=HEAD is a faster alternative.)
+            branch="(`git describe --all --contains --abbrev=4 HEAD 2> /dev/null ||
+                echo HEAD`)"
+        fi
+        echo -n '\[\e[0;37;'"40"';1m\]'"$branch"'\[\e[0m\] '
+    fi
 }
+function _prompt_command() {
+    PS1="`_git_prompt`"'\[\033[38;5;14m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;3m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;14m\]>\[$(tput sgr0)\] '
+    #PS1="`_git_prompt`"'\[\e[1;34m\]\w \$\[\e[0m\] '
+}
+PROMPT_COMMAND=_prompt_command
 
 #PS1='[\u@\h \W]\$ '  # Default
 #PS1='\[\e[1;36m\]\u@\h \W\$\[\e[0m\] '
@@ -125,7 +152,7 @@ parse_git_branch() {
 #PS1="\[\033[37;1m\][\[\033[33;1m\]\u\[\033[37;1m\]@\[\033[32;1m\]\h\[\033[37;1m\]:\[\033[0;36m\]\w\[\033[37;1m\]]\[\033[m\]$ "
 #PS1="\[\033[37;1m\][\[\033[m\]\u\[\033[37;1m\]@\[\033[m\]\h\[\033[37;1m\]:\[\033[m\]\w\[\033[37;1m\]]\[\033[m\]$ "
 #PS1="\[\e[0;33m\]\u\[\e[m\] \[\e[1;36m\]\w\[\e[m\] \[\e[0;35m\]\$\[\e[m\]\$(parse_git_branch)\[\033[00m\] "
-PS1="\[\e[0;33m\]\u@\h \e[1;36m\W\[\]\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
+#PS1="\[\e[0;33m\]\u@\h \e[1;36m\W\[\]\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
 
 
 # Monokai prompt
@@ -138,7 +165,7 @@ PS1="\[\e[0;33m\]\u@\h \e[1;36m\W\[\]\033[32m\]\$(parse_git_branch)\[\033[00m\] 
 #YELLOW=$'\e[37;40m'
 #PINK=$'\e[31;40m'
 
-#PS1='\n\n\[$PINK\]\u \[$LBLUE\]on \[$PURPLE\]\d \[$LBLUE\]at \[$ORANGE\]\@ \[$LBLUE\]in'
+#PS1='\n\n\[$PINK\]\u \[$LBLUE\]on \[$PURPLE\]\d \[$LBLUE\]at \[$ORANGE\]\@ \[$LBLUE\]'
 #. ~/.bash_prompt
 
 #Colored manpages
