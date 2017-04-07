@@ -42,6 +42,8 @@ alias cucumber='bundle exec cucumber'
 alias ls='ls --color=auto'
 alias ..='cd ..'
 alias l='ls -l'
+alias k='kubectl'
+source <(kubectl completion bash | sed s/kubectl/k/g)
 
 # use github-create function to creare github repository from command line
 github-create() {
