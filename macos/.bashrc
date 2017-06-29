@@ -26,11 +26,17 @@
 test -s ~/.alias && . ~/.alias || true
 
 # MacOs coreutils aliasis
-#alias ls to GNUs alias
+# Load GNU aliases
+source /usr/local/Cellar/coreutils/8.12/aliases
+
+#and alias ls to GNUs alias
 
 alias ls='gls --color=auto'
 
 #and of course add the aliases to coreutils before the ls alias
+
+# Load GNU aliases
+source /usr/local/Cellar/coreutils/8.12/aliases
 
 #dircolors
 if [ -f ~/.dir_colors ]; then
@@ -38,7 +44,7 @@ if [ -f ~/.dir_colors ]; then
 fi
 # Some aliases here
 alias tmux='tmux -2'
-#alias ls='ls --color=auto'
+alias ls='ls --color=auto'
 alias ..='cd ..'
 alias l='ls -l'
 #alias k='kubectl'
