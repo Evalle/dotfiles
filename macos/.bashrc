@@ -15,38 +15,17 @@
 # For some news readers it makes sense to specify the NEWSSERVER variable here
 #export NEWSSERVER=your.news.server
 
-# If you want to use a Palm device with Linux, uncomment the two lines below.
-# For some (older) Palm Pilots, you might need to set a lower baud rate
-# e.g. 57600 or 38400; lowest is 9600 (very slow!)
-#
-
-#export PILOTPORT=/dev/pilot
-#export PILOTRATE=115200
-
 test -s ~/.alias && . ~/.alias || true
 
-# MacOs coreutils aliasis
-# Load GNU aliases
-source /usr/local/Cellar/coreutils/8.12/aliases
-
 #and alias ls to GNUs alias
-
 alias ls='gls --color=auto'
 
-#and of course add the aliases to coreutils before the ls alias
-
-# Load GNU aliases
-source /usr/local/Cellar/coreutils/8.12/aliases
-
-#dircolors
-if [ -f ~/.dir_colors ]; then
-    eval `dircolors ~/.dir_colors`
-fi
 # Some aliases here
 alias tmux='tmux -2'
-alias ls='ls --color=auto'
 alias ..='cd ..'
 alias l='ls -l'
+alias la='ls -al'
+
 #alias k='kubectl'
 #source <(kubectl completion bash | sed s/kubectl/k/g)
 

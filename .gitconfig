@@ -7,4 +7,5 @@
 	rebase = true
 [alias]
 	s = status -s
+    b = branch
 	lg = log --oneline --decorate --all --graph
