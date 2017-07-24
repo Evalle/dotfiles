@@ -124,3 +124,4 @@ man() {
 
 # added by travis gem
 [ -f /home/evgeny/.travis/travis.sh ] && source /home/evgeny/.travis/travis.sh
+PATH="$HOME/Library/Python/2.7/bin:$PATH"

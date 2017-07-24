@@ -1,11 +1,12 @@
 [user]
-	email = shmarnev@gmail.com
-	name = evalle
+    email = shmarnev@gmail.com
+    name = evalle
 [core]
-	autocrlf = input
+    autocrlf = input
 [pull]
-	rebase = true
+    rebase = true
 [alias]
-	s = status -s
+    s = status -s
     b = branch
-	lg = log --oneline --decorate --all --graph
+    lg = log --oneline --decorate --all --graph
+    co = checkout
