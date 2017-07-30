@@ -10,7 +10,7 @@ alias tmux='tmux -2'
 alias ..='cd ..'
 alias l='ls -l'
 alias la='ls -al'
-alias k='kubectl'
+alias kc='kubectl'
 
 # Exports
 # ---------
@@ -20,6 +20,12 @@ export PATH
 # export locale
 export LANG=en_US.utf8
 
+# Kubectl bash completion for MacOs
+source $(brew --prefix)/etc/bash_completion
+source <(kubectl completion bash)
+# autocompletion for kubectl alias
+source <(kubectl completion bash | sed s/kubectl/kc/g)
+ 
 # Functions:
 # ----------
 # use github-create function to creare github repository from command line
