@@ -1,6 +1,7 @@
 execute pathogen#infect()
 syntax on
 
+set backspace=start,eol,indent
 scriptencoding utf-8
 set encoding=utf-8
 set tabstop=4
@@ -105,21 +106,6 @@ endif
 set background=dark
 colors monokai
 
-"try
-"    colorscheme desert
-"catch
-"endtry
-
-" set background=dark
-
-" Set extra options when running in GUI mode
-"if has("gui_running")
-"    set guioptions-=T
-"    set guioptions-=e
-"    set t_Co=256
-"    set guitablabel=%M\ %t
-"endif
-
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
@@ -152,3 +138,10 @@ filetype plugin on
 
 " tagbar
 nmap <F8> :TagbarToggle<CR>
+
+" invisible spaces
+set listchars=tab:▸\ ,trail:·
+set list
+
+" two spaces for YAMLs
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
