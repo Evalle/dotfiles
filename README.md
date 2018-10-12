@@ -1,9 +1,10 @@
-Dotfiles
+# Dotfiles
 ======================================
 
 Collection of config files and tweaks.
 
-**.vim and vimrc**
+## .vim and vimrc
+
 (Vim configuration files)
 - Vim plugins:
     - airline
@@ -12,23 +13,23 @@ Collection of config files and tweaks.
     - vim-go
     - jedi-vim
 
-**.tmux**
+## .tmux 
 
 - Tmux configuration file
 
-**.gitconfig**
+## .gitconfig
 
 - Git configuration file
 
-**aliases.sh**
+## aliases.sh
 
 - Script that adds some specific aliases to my new openSUSE machine
 
-**i3**
+## i3
 
 - directory with config files for i3 tiling wm, just copy them to ~/.config/
 
-**Monokai.colorcheme**
+## Monokai.colorcheme
 
 - one should put this file into:
   - KDE 4: ~/.kde/share/apps/konsole
@@ -36,10 +37,14 @@ Collection of config files and tweaks.
   - You can then select it in the appearance tab of your profile settings.
   ![](https://github.com/Evalle/dotfiles/blob/master/tmp/konsole_anim.gif)
 
-**.dir_colors**
+## .dir_colors
 
 - color output for 'ls' command
 
-**install.sh**
+## install.sh
 
 - bash script to install all above stuff automatically
+
+## .zshrc
+
+zsh config, don't forget to change `user_name` to the default username 
