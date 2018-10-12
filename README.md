@@ -1,5 +1,4 @@
 # Dotfiles
-======================================
 
 Collection of config files and tweaks.
 
